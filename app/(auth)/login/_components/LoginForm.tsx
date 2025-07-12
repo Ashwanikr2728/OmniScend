@@ -6,7 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { Github, GithubIcon, Loader, Loader2, Send } from "lucide-react";
+import { GithubIcon, Loader, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -32,7 +32,7 @@ export default function LoginForm() {
               "Successfully logged in with Github, you will be redirected..."
             );
           },
-          onError: (error) => {
+          onError: () => {
             toast.error("Internal Server error");
           },
         },

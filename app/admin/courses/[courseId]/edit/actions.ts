@@ -10,7 +10,6 @@ import {
   courseSchema,
   CourseSchemaType,
   lessonSchema,
-  LessonSchemaType,
 } from "@/lib/zodSchemas";
 import { fixedWindow, request } from "@arcjet/next";
 import { revalidatePath } from "next/cache";
@@ -417,8 +416,9 @@ export async function deleteChapter({
     status: "success",
     message: "Chapter deleted and position reordered successfully",
   };
-} catch (error: any) {
-  console.error(" Chapter deletion failed:", error?.message || error);
+} catch (error: unknown) {
+  const err = error as Error;
+  console.error(" Chapter deletion failed:", err.message || error);
   return {
     status: "error",
     message: "Failed to delete Chapter"

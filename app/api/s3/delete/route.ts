@@ -4,8 +4,6 @@ import { NextResponse } from "next/server";
 import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 import arcjet, { detectBot } from "@/lib/arcjet";
 import { fixedWindow } from "@arcjet/next";
-import { headers } from "next/headers";
-import { auth } from "@/lib/auth";
 import { requireAdmin } from "@/app/data/admin/require-admin";
 
 const aj = arcjet

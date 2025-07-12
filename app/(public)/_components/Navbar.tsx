@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 
 import React, { useRef, useState } from "react";
@@ -19,42 +18,6 @@ const navigationItems = [
   { name: "Dashboard", href: "/dashboard" },
 ];
 
-const MobileNavMenu = ({
-  isOpen,
-  onClose,
-  children,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}) => {
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 z-40 bg-black/50 flex justify-center items-start md:hidden pt-20 px-4">
-      <div className="w-full max-w-sm bg-white dark:bg-neutral-900 p-4 space-y-4 rounded-lg shadow-xl">
-        <button onClick={onClose} className="text-sm font-bold mb-2">
-          ✕ Close
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-};
-
-const MobileNavToggle = ({
-  isOpen,
-  onClick,
-}: {
-  isOpen: boolean;
-  onClick: () => void;
-}) => {
-  return (
-    <button onClick={onClick} className="md:hidden p-2">
-      {isOpen ? <IconX size={24} /> : <IconMenu2 size={24} />}
-    </button>
-  );
-};
 
 export function Navbar() {
   const isMediumScreen = useMediaQuery("(min-width: 1436px)");
@@ -65,7 +28,6 @@ export function Navbar() {
     offset: ["start start", "end start"],
   });
   const [visible, setVisible] = useState<boolean>(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {

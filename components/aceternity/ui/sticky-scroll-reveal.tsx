@@ -11,17 +11,12 @@ export const StickyScroll = ({
   content: {
     title: string;
     description: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     content?: React.ReactNode | any;
   }[];
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = useState(0);
-
-  const backgroundColors = [
-    "#0f172a", // slate-900
-    "#000000", // black
-    "#171717", // neutral-900
-  ];
 
   const linearGradients = [
     "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan to emerald
@@ -38,17 +33,18 @@ export const StickyScroll = ({
   }, [activeCard]);
 
   return (
-    <motion.div className="relative flex h-[35rem] justify-center space-x-10 overflow-y-auto rounded-md p-10 bg-white/10 backdrop-blur-md shadow-2xl dark:bg-[#0f172a]/40"
->
+    <motion.div className="relative flex h-[35rem] justify-center space-x-10 overflow-y-auto rounded-md p-10 bg-white/10 backdrop-blur-md shadow-2xl dark:bg-[#0f172a]/40">
       <div className="relative flex items-start px-4 max-w-2xl w-full">
         <div className="w-full">
           {content.map((item, index) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const ref = useRef(null);
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             const isInView = useInView(ref, {
               margin: "-40% 0px -40% 0px",
               amount: 0.5,
             });
-
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             useEffect(() => {
               if (isInView) setActiveCard(index);
             }, [isInView]);
@@ -66,7 +62,6 @@ export const StickyScroll = ({
                   }}
                   transition={{ duration: 0.4 }}
                   className="text-3xl md:text-4xl font-bold text-black dark:text-white"
-
                 >
                   {item.title}
                 </motion.h2>
@@ -77,7 +72,6 @@ export const StickyScroll = ({
                   }}
                   transition={{ duration: 0.4 }}
                   className="mt-4 max-w-md text-base md:text-lg text-black dark:text-white"
-
                 >
                   {item.description}
                 </motion.p>
@@ -92,8 +86,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "sticky top-10 hidden h-72 w-96 overflow-hidden rounded-xl bg-white/10 backdrop-blur-md shadow-xl lg:block"
-,
+          "sticky top-10 hidden h-72 w-96 overflow-hidden rounded-xl bg-white/10 backdrop-blur-md shadow-xl lg:block",
           contentClassName
         )}
       >

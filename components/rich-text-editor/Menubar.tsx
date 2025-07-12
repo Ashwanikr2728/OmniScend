@@ -6,7 +6,7 @@ import {
   TooltipTrigger,
 } from "../ui/tooltip";
 import { Toggle } from "../ui/toggle";
-import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, Bold, Heading1Icon, Heading2Icon, Heading3Icon, ItalicIcon, ListIcon, ListOrderedIcon, Redo, Strikethrough, StrikethroughIcon, Undo } from "lucide-react";
+import { AlignCenterIcon, AlignLeftIcon, AlignRightIcon, Bold, Heading1Icon, Heading2Icon, Heading3Icon, ItalicIcon, ListIcon, ListOrderedIcon, Redo, Strikethrough, Undo } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 interface iAppProps {

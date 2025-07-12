@@ -11,9 +11,6 @@ import {
 } from "./RenderState";
 import { toast } from "sonner";
 import { v4 as uuidv4 } from "uuid";
-import { POST } from "@/app/api/s3/upload/route";
-import { resolve } from "path";
-import { fi } from "zod/v4/locales";
 import { useConstructUrl } from "@/hooks/use-construct-url";
 
 interface UploaderState {

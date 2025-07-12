@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { tryCatch } from "@/hooks/try-catch";
-import { CreateChapter, CreateLesson } from "../actions";
+import { CreateLesson } from "../actions";
 import { toast } from "sonner";
 
 export function NewLessonModal({

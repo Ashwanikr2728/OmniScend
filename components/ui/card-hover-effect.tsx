@@ -2,7 +2,6 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import { useState, useEffect } from "react";
-import { HoverBorderGradient } from "../aceternity/ui/hover-border-gradient";
 
 // ✅ Mobile detection
 const useIsMobile = () => {
@@ -30,7 +29,7 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   const isMobile = useIsMobile(); // ✅ detect mobile
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div

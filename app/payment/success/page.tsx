@@ -2,7 +2,7 @@
 
 import { useConfetti } from "@/hooks/use-confetti";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, CheckIcon, XIcon } from "lucide-react";
+import { ArrowLeft, CheckIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect } from "react";
 import { buttonVariants } from "@/components/ui/button";
@@ -12,7 +12,7 @@ export default function PaymentSuccessfull() {
 
   useEffect(() => {
     triggerConfetti();
-  }, []);
+  }, [triggerConfetti]);
   return (
     <div className="w-full min-h-screen flex flex-1 justify-center items-center">
       <Card className="w-[350px]">

@@ -7,12 +7,9 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { S3 } from "@/lib/S3Client";
 import arcjet, { detectBot } from "@/lib/arcjet";
 import { fixedWindow } from "@arcjet/next";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { error } from "console";
 import { requireAdmin } from "@/app/data/admin/require-admin";
 
-export const fileUploadSchema = z.object({
+const fileUploadSchema = z.object({
   fileName: z.string().min(1, { message: "Filename is required" }),
   contentType: z.string().min(1, { message: "Content type is required" }),
   size: z.number().min(1, { message: "Size is required" }),
