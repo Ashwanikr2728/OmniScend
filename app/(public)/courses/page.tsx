@@ -5,6 +5,8 @@ import {
 } from "../_components/PublicCourseCard";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function PublicCoursesroute() {
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden mt-10">
