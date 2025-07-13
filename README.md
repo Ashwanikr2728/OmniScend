@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Omniscend — From Passion to Profession
 
-## Getting Started
+**Omniscend** is a modern Learning Management System (LMS) built to elevate how the world learns.  
+Derived from “Omni” (everything) and “Ascend” (rise), **Omniscend** means _“Everything Elevate”_ — and that’s exactly what we aim to do.
 
-First, run the development server:
+> 🌍 Connect with the world  
+> 🎯 From Passion to Profession
+
+---
+
+## ✨ Key Features
+
+- 📚 Create, publish, and enroll in video courses
+- 🔐 **BetterAuth** for authentication (Email-based OTP verification)
+- 💳 Course payments via **Stripe**
+- 📩 Transactional email delivery using **Resend**
+- 🛡️ Bot protection and secure requests via **Arcjet**
+- 🌙 Fully responsive with light/dark mode support
+- 🤖 **AI Chatbot** — *in progress*
+- 📞 **OmniMeet Integration** — *video calling in progress*
+
+---
+
+## 🔧 Tech Stack
+
+| Layer        | Stack                                       |
+|--------------|----------------------------------------------|
+| Frontend     | Next.js (App Router, TypeScript)             |
+| Styling      | Tailwind CSS + ShadCN UI                     |
+| State Mgmt   | Zustand                                      |
+| Backend      | Prisma + Neon (PostgreSQL) via **Tigris**    |
+| Auth         | **BetterAuth** (custom + secure OTP login)   |
+| Emails       | Resend                                       |
+| Payments     | Stripe                                       |
+| Security     | Arcjet                                       |
+| Video Calls  | OmniMeet (custom WebRTC setup)               |
+
+---
+
+## 🛠 Getting Started
 
 ```bash
+# 1. Clone the project
+git clone https://github.com/your-username/omniscend.git
+cd omniscend
+
+# 2. Install dependencies
+npm install
+
+# 3. Setup environment
+cp .env.example .env.local
+# Fill in:
+# - Neon DB URL (via Tigris)
+# - Stripe keys
+# - Resend API key
+# - Arcjet secret
+# - BetterAuth secrets
+
+# 4. Push schema to Neon DB
+npx prisma db push
+
+# 5. Run the app
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
