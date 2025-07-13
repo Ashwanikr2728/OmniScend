@@ -84,9 +84,9 @@ export default function Home() {
             <div className=" fixed z-40 bottom-10">
               <Link href="/chatBot" className=" gap-y-5 flex flex-col">
                 <span>
-                  <Image className="rounded-full" src={logo} alt="Myai" width={90} />
+                  <Image className="rounded-full" src={logo} alt="Myai" width={60} />
                 </span>
-                <Button className="bg-accent-foreground dark:bg-emerald-900 text-sm font-semibold rounded-3xl">Omni AI</Button>
+                <Button className="bg-accent-foreground dark:bg-emerald-900 text-[12px] font-semibold rounded-4xl">Omni AI</Button>
               </Link>
             </div>
         </section>

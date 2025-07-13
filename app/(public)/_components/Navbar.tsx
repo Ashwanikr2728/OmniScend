@@ -64,7 +64,7 @@ export function Navbar() {
 
         <div className="flex min-h-10 items-center justify-between ">
           <Link href="/" className="flex items-center space-x-2 mr-4">
-            <Image src={logo} alt="Logo" className="size-9 rounded-full" />
+            <Image src={logo} alt="Logo" className="size-8 rounded-full" />
             <span className="font-bold text-xl">OmniScend</span>
           </Link>
 

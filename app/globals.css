@@ -163,6 +163,13 @@
 .animate-scroll {
   animation: scroll 30s linear infinite reverse;
 }
+
+@media (max-width: 640px) {
+  .animate-scroll {
+    animation-duration: 9s; /* Fast on mobile */
+  }
+}
+
 /* globals.css */
 
 .custom-scrollbar::-webkit-scrollbar {
